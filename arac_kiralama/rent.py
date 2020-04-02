@@ -151,7 +151,7 @@ class BikeRent(VehicleRent):
         super().__init__(stock)
     
 # customer
-class Customer:
+class Costumer:
     
     def __init__(self):
         self.bikes = 0
