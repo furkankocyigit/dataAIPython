@@ -20,8 +20,8 @@ class VehicleRent:
             Display Stock
         
         """
-        print("{} vehicle avaliable to rent".format(self.stock))
-        return self.stock
+        print("{} vehicle avaliable to rent".format(self.__stock))
+        return self.__stock
     
     def rentHourly(self, n):
         """
@@ -31,15 +31,15 @@ class VehicleRent:
             print("Number should be positive")
             return None
         
-        elif n > self.stock:
-            print("Sorry {} vehicle available to rent".format(self.stock))
+        elif n > self.__stock:
+            print("Sorry {} vehicle available to rent".format(self.__stock))
             return None
         
         else:
             self.now = datetime.datetime.now()
             print("Rented {} vehicle for hourly at {} hours".format(n, self.now.hour))
             
-            self.stock -= n
+            self.__stock -= n
             
             return self.now
         
@@ -51,15 +51,15 @@ class VehicleRent:
             print("Number should be positive")
             return None
         
-        elif n > self.stock:
-            print("Sorry {} vehicle available to rent".format(self.stock))
+        elif n > self.__stock:
+            print("Sorry {} vehicle available to rent".format(self.__stock))
             return None
         
         else:
             self.now = datetime.datetime.now()
             print("Rented {} vehicle for daily at {} hours".format(n, self.now.hour))
             
-            self.stock -= n
+            self.__stock -= n
             
             return self.now
         
@@ -79,7 +79,7 @@ class VehicleRent:
         
         if brand == "car":
             if rentalTime and rentalBasis and numOfVehicle:
-                self.stock += numOfVehicle
+                self.__stock += numOfVehicle
                 now = datetime.datetime.now()
                 rentalPeriod = abs(now - rentalTime)
                 
@@ -99,7 +99,7 @@ class VehicleRent:
         
         elif brand == "bike":
             if rentalTime and rentalBasis and numOfVehicle:
-                self.stock += numOfVehicle
+                self.__stock += numOfVehicle
                 now = datetime.datetime.now()
                 rentalPeriod = abs(now - rentalTime)
                 
@@ -184,7 +184,7 @@ class Costumer:
             return self.bikes
             
         elif brand == "car":
-            cars = input("How many bikes would you like to rent?")
+            cars = input("How many car would you like to rent?")
              
             try:
                 cars = int(cars)
@@ -215,7 +215,7 @@ class Costumer:
                 return 0, 0, 0
             
             
-        elif brand == "cars":
+        elif brand == "car":
             if self.rentalTime_c and self.rentalBasis_c and self.cars:
                 return self.rentalTime_c, self.rentalBasis_c, self.cars
             else:

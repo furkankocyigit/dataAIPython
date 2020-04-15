@@ -54,7 +54,7 @@ while True:
             costumer.rentalTime_b = bike.rentHourly(costumer.requestVehicle("bike"))
             costumer.rentalBasis_b = 1
             main_menu = True
-            print("-------------------------------")
+            print("-----------------------a--------")
             
         elif choice == 3:
             costumer.rentalTime_b = bike.rentDaily(costumer.requestVehicle("bike"))
@@ -79,7 +79,7 @@ while True:
             
     elif choice == "B" or choice == "b":
         print("""
-              ***** BIKE MENU *****
+              ***** CAR MENU *****
               1. Display available cars
               2. Request a car on hourly basis $10
               3. Request a car on daily basis $84
