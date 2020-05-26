@@ -66,3 +66,71 @@ print("max: ",a.max())
 print("min: ",a.min())
 print("colomnSum: ",a.sum(axis = 0))
 print("rowSum: ",a.sum(axis = 1))
+
+# %% indexing and slicing
+
+array = np.array([1,2,3,4,5,6,7])  # vector
+
+reverse_array = array[::-1]
+print( "reverse array: ",reverse_array)
+
+array1 = np.array([[1,2,3,4,5],
+                   [6,7,8,9,10]])
+print(array1[1,1])
+print(array1[:,1])
+print(array1[1,1:4])
+
+#%% Shape manupilation
+
+array = np.array([[1,2,3],
+                  [4,5,6],
+                  [7,8,9]])
+a = array.ravel()
+print(a)
+array2 = a.reshape(3,3)
+print(array2)
+
+# %% Stacking arrays
+
+array1 = np.array([[1,2],[3,4]])
+array2 = np.array([[-1,-2],[-3,-4]])
+
+array3 = np.vstack((array1,array2))
+array4 = np.hstack((array1,array2))
+
+print(array3)
+print(array4)
+
+# %% convert and copy 
+
+liste = [1,2,3,4]
+
+array = np.array(liste)
+
+liste2 = list(array)
+
+a = np.array([1,2,3])
+
+b = a
+b[0] = 5
+c = a
+print("a: ", a)
+print("b: ", b)
+print("c: ", c)
+
+d = np.array([1,2,3])
+
+e = d.copy()
+e[0] = 5
+f = d.copy()
+
+print("d: ", d)
+print("e: ", e)
+print("f: ", f)
+
+
+
+
+
+
+
